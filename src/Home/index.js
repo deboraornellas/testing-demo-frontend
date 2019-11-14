@@ -76,6 +76,7 @@ const Home = props => {
       console.log(e);
       setAddGradeMessage("Não foi possível adicionar a nota.");
     }
+    document.getElementById("send-new-grade").reset();
   };
 
   return (
@@ -102,7 +103,11 @@ const Home = props => {
         <Fragment>
           <TitleStyle>Acessar perfil de um(a) aluno(a):</TitleStyle>
           <form onSubmit={redirectToStudentPage}>
-            <Input type="text" placeholder="Nome do(a) aluno(a)" />
+            <Input
+              className="getStudentNameInput"
+              type="text"
+              placeholder="Nome do(a) aluno(a)"
+            />
             <br /> <br />
             <Button variant="contained" type="submit">
               Ver perfil
@@ -117,7 +122,7 @@ const Home = props => {
       {newGradeFormOpen && (
         <Fragment>
           <br />
-          <form onSubmit={sendNewGrade}>
+          <form id="send-new-grade" onSubmit={sendNewGrade}>
             <Input type="text" placeholder="Nome do(a) aluno(a)" />
             <br />
             <Input type="text" placeholder="Nova nota (valor numérico)" />

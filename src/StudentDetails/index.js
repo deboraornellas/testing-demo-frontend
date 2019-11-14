@@ -59,9 +59,7 @@ const StudentDetails = props => {
           />
 
           {studentInfo.average !== 0 && (
-            <TitleStyle>
-              Média atual: {studentInfo.average.toFixed(2)}
-            </TitleStyle>
+            <TitleStyle>Média atual: {studentInfo.average}</TitleStyle>
           )}
           {studentInfo.average === 0 && (
             <TitleStyle>Este aluno(a) não possui notas registradas.</TitleStyle>
